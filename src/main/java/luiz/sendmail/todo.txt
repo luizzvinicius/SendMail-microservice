@@ -1,0 +1,3 @@
+adicionar:
+- swagger
+- testes
