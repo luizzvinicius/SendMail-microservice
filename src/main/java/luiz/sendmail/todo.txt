@@ -1,4 +1,0 @@
-adicionar:
-- swagger
-- testes
-- melhorar exceções
