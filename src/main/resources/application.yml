@@ -1,0 +1,15 @@
+spring:
+  application:
+    name: "email-sender"
+server:
+  error:
+    include-stacktrace: never
+    include-message: never
+management:
+  endpoints:
+    web:
+      exposure:
+        include: info, metrics, health, prometheus
+  metrics:
+    tags:
+      application: "email-sender"
