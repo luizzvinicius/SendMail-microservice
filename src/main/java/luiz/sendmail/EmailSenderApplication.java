@@ -9,12 +9,12 @@ import org.springframework.context.annotation.Bean;
 
 @SpringBootApplication
 public class EmailSenderApplication {
+    public static void main(String[] args) {
+        SpringApplication.run(EmailSenderApplication.class, args);
+    }
 
-	public static void main(String[] args) {
-		SpringApplication.run(EmailSenderApplication.class, args);
-	}
-	@Bean
-	MeterRegistryCustomizer<MeterRegistry> configurer(@Value("${spring.application.name}") String applicationName) {
-		return registry -> registry.config().commonTags("application", applicationName);
-	}
+    @Bean
+    MeterRegistryCustomizer<MeterRegistry> configurer(@Value("${spring.application.name}") String applicationName) {
+        return registry -> registry.config().commonTags("application", applicationName);
+    }
 }

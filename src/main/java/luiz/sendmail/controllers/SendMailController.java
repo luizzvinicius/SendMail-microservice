@@ -22,6 +22,6 @@ public class SendMailController {
     @PostMapping
     public ResponseEntity<Void> sendMail(@RequestBody @Valid SendMailDTO dto) {
         sendMailService.sendMail(dto.from(), dto.to(), dto.subject(), dto.content());
-        return ResponseEntity.status(HttpStatus.OK).build();
+        return ResponseEntity.status(HttpStatus.ACCEPTED).build();
     }
 }

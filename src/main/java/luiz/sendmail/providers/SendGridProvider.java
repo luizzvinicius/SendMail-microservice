@@ -27,6 +27,7 @@ public class SendGridProvider implements IProvider {
         request.setEndpoint("mail/send");
         request.setBody(mail.build());
 
-        sendGrid.api(request);
+        var response = sendGrid.api(request);
+        System.out.println(response.getStatusCode());
     }
 }
