@@ -1,6 +1,9 @@
 spring:
   application:
     name: "email-sender"
+  output:
+    ansi:
+      enabled: always
 server:
   port: 8081
   error:
@@ -13,4 +16,11 @@ management:
         include: info, metrics, health, prometheus
   metrics:
     tags:
-      application: "email-sender"
+      application: ${spring.application.name}
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka/  # Endereço do Eureka Server
+  instance:
+    prefer-ip-address: true # Configuração opcional, usa o IP no lugar do hostname
